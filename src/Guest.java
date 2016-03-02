@@ -4,7 +4,7 @@ public class Guest extends Person {
         super(firstName, surName, gender);
     }
 
-    public String labelRepresentAccordingToSecondname() {
+    public String labelRepresentAccordingToSecondName() {
         return super.genderRepresentation() + " " + super.getSecondName() + "," + super.getFirstName();
 
     }

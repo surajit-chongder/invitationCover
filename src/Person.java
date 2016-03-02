@@ -17,7 +17,7 @@ public class Person {
         return secondName;
     }
 
-    public String genderRepresentation() {
-        return Objects.equals(this.gender, "Male") ? "Mr" : "Ms";
+    public Gender genderRepresentation() {
+        return Objects.equals(this.gender, "Male") ? Gender.Male : Gender.Female;
     }
 }

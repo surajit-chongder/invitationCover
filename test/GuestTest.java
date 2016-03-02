@@ -16,14 +16,14 @@ public class GuestTest {
     }
 
     @Test
-    public void test_labelRepresentAccordingToSecondname_represent_guest_name_for_female() throws Exception {
+    public void test_labelRepresentAccordingToSecondName_represent_guest_name_for_female() throws Exception {
         Guest guest = new Guest("Julius", "Barrows", "Female");
-        Assert.assertEquals("Ms Barrows,Julius", guest.labelRepresentAccordingToSecondname());
+        Assert.assertEquals("Ms Barrows,Julius", guest.labelRepresentAccordingToSecondName());
     }
 
     @Test
-    public void test_labelRepresentAccordingToSecondname_represent_guest_name_for_male() throws Exception {
+    public void test_labelRepresentAccordingToSecondName_represent_guest_name_for_male() throws Exception {
         Guest guest = new Guest("Gavin", "Hyatt", "Male");
-        Assert.assertEquals("Mr Hyatt,Gavin", guest.labelRepresentAccordingToSecondname());
+        Assert.assertEquals("Mr Hyatt,Gavin", guest.labelRepresentAccordingToSecondName());
     }
 }
