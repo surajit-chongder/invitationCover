@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Person {
-    private String firstName, secondName, gender;
+    private final String firstName, secondName, gender;
 
     public Person(String firstName, String surName, String gender) {
         this.firstName = firstName;
@@ -9,12 +9,15 @@ public class Person {
         this.gender = gender;
     }
 
-    @Override
-    public String toString() {
-        return genderRepresentation() + " " + firstName + " " + secondName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    private String genderRepresentation() {
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String genderRepresentation() {
         return Objects.equals(this.gender, "Male") ? "Mr" : "Ms";
     }
 }
