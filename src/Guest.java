@@ -1,15 +1,7 @@
-public class Guest extends Person {
+public class Guest extends PersonDetails {
 
-    public Guest(String firstName, String surName, String gender) {
-        super(firstName, surName, gender);
+    public Guest(String firstName, String surName, String gender,String age,String city,String state,String country) {
+        super(firstName, surName, gender,age,city,state,country);
     }
 
-    public String labelRepresentAccordingToSecondName() {
-        return super.genderRepresentation() + " " + super.getSecondName() + "," + super.getFirstName();
-
-    }
-
-    public String simpleLabelRepresent() {
-        return super.genderRepresentation() + " " + super.getFirstName() + " " + super.getSecondName();
-    }
 }

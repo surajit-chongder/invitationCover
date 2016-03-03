@@ -20,4 +20,13 @@ public class Person {
     public Gender genderRepresentation() {
         return Objects.equals(this.gender, "Male") ? Gender.Male : Gender.Female;
     }
+
+    public String toString(String delimiter) {
+        return genderRepresentation() + " " + getSecondName() + delimiter + getFirstName();
+    }
+
+    @Override
+    public String toString() {
+        return genderRepresentation() + " " + getFirstName() + " " + getSecondName();
+    }
 }
