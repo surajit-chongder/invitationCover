@@ -3,14 +3,18 @@ public class PersonDetails {
     String age;
     PersonAddress address;
 
-    public PersonDetails(String firstName, String surName, String gender,String age,String city,String state,String country) {
-        this.person = new Person(firstName,surName,gender);
+
+    public PersonDetails(String firstName, String surName, String gender, String age, String city, String state, String country) {
+        this.person = new Person(firstName, surName, gender);
         this.age = age;
-        this.address = new PersonAddress(city,state,country);
+        this.address = new PersonAddress(city, state, country);
     }
 
-//    @Override
-//    public String toString() {
-//        return ;
-//    }
+    public String secondNameRepresentation() {
+        return person.toString(",") + " " + address.getCountry();
+    }
+
+    public String simpleRepresentation() {
+        return person.toString() + " " + address.getCountry();
+    }
 }
