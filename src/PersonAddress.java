@@ -9,7 +9,8 @@ public class PersonAddress {
         this.country = country;
     }
 
-    public String getCountry() {
+    @Override
+    public String toString() {
         return country;
     }
 }

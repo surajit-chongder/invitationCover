@@ -9,24 +9,16 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
     public Gender genderRepresentation() {
         return Objects.equals(this.gender, "Male") ? Gender.Male : Gender.Female;
     }
 
     public String toString(String delimiter) {
-        return genderRepresentation() + " " + getSecondName() + delimiter + getFirstName();
+        return genderRepresentation() + " " + secondName + delimiter + firstName;
     }
 
     @Override
     public String toString() {
-        return genderRepresentation() + " " + getFirstName() + " " + getSecondName();
+        return genderRepresentation() + " " + firstName + " " + secondName;
     }
 }

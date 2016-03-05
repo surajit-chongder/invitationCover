@@ -1,0 +1,14 @@
+Build Library that print label(representation) for invitation cover:
+
+INPUT:
+    firstName,lastName,gender,age,city,state,country
+
+Requirement:
+   1. Mr/Ms first last
+   2. Mr/Ms last,first
+
+      Prefix:
+         male - Mr
+         female - Ms
+
+Command line: fileName countryName requireMethod
