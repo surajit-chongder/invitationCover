@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
-public class Guest {
+public class GuestRepresentation {
     private HashMap allGuest;
 
-    public Guest(HashMap allGuest) {
+    public GuestRepresentation(HashMap allGuest) {
         this.allGuest = allGuest;
     }
 
