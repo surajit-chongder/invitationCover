@@ -9,10 +9,21 @@ public class GuestRepresentation {
         this.allGuest = allGuest;
     }
 
-    public List countryRepresentation(String key) {
+    public List countryRepresentation(String key, String age,String drinkLegality) {
+        int requireAge = Integer.parseInt(age);
         List countryGuest = (List) allGuest.get(key);
+        List drinkWiseCountryGuest = new ArrayList();
+        if (drinkLegality.equals("below"))
+            drinkWiseCountryGuest = new Drinker(requireAge).filterIllegalDrinker(countryGuest);
+        if (drinkLegality.equals("above"))
+            drinkWiseCountryGuest = new Drinker(requireAge).filterLegalDrinker(countryGuest);
         List<PersonDetails> guest = new ArrayList<>();
-        for (Object aCountryGuest : countryGuest) {
+        giveProperty(guest, drinkWiseCountryGuest);
+        return guest;
+    }
+
+    private void giveProperty(List<PersonDetails> initialList, List guestList) {
+        for (Object aCountryGuest : guestList) {
             List each = (List) aCountryGuest;
             String firstName = (String) each.get(0);
             String secondName = (String) each.get(1);
@@ -22,9 +33,8 @@ public class GuestRepresentation {
             String state = (String) each.get(5);
             String country = (String) each.get(6);
             PersonDetails eachPerson = new PersonDetails(firstName, secondName, gender, age, city, state, country);
-            guest.add(eachPerson);
+            initialList.add(eachPerson);
         }
-        return guest;
     }
 
     public List representation(List guest, String method) {

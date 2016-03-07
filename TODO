@@ -4,12 +4,17 @@ INPUT:
     firstName,lastName,gender,age,city,state,country
 
 Requirement:
-   1. Mr/Ms first last
-   2. Mr/Ms last,first
+    1. Mr/Ms first last,country,age
+    2. Mr/Ms last,first,country,age
 
       Prefix:
          male - Mr
          female - Ms
 
-Command line: shellScript country records
+Command line: shellScript country age above/below records
 
+works:
+    read the records according to input.
+    make their representation according to requirement.
+    separate the total data according to country.
+    separate the data according to country and the legal and illegal drinking age which age is given accordingly.

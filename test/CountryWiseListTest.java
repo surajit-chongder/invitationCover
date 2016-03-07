@@ -11,28 +11,28 @@ public class CountryWiseListTest {
     @Test
     public void test_mappingCountryGuest_give_guest_records_country_wise() throws Exception {
         List<ArrayList<String>> list = new ArrayList<>();
-        String crunchifyString1 = "Julius,Barrows,Female,18,Veda haven,Vermont,Macedonia";
-        ArrayList<String> crunchifyResult1 = new ArrayList<>();
-        String[] splitData1 = crunchifyString1.split(",");
-        Collections.addAll(crunchifyResult1, splitData1);
-        list.add(crunchifyResult1);
+        String recordString1 = "Julius,Barrows,Female,18,Veda haven,Vermont,Macedonia";
+        ArrayList<String> personList1 = new ArrayList<>();
+        String[] splitData1 = recordString1.split(",");
+        Collections.addAll(personList1, splitData1);
+        list.add(personList1);
 
-        String crunchifyString2 = "Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh";
-        ArrayList<String> crunchifyResult2 = new ArrayList<>();
-        String[] splitData2 = crunchifyString2.split(",");
-        Collections.addAll(crunchifyResult2, splitData2);
-        list.add(crunchifyResult2);
+        String recordString2 = "Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh";
+        ArrayList<String> personList2 = new ArrayList<>();
+        String[] splitData2 = recordString2.split(",");
+        Collections.addAll(personList2, splitData2);
+        list.add(personList2);
 
         CountryWiseList countryWiseList = new CountryWiseList(list);
         HashMap countryHast = countryWiseList.mappingCountryGuest();
         HashMap expected = new HashMap<>();
         List<ArrayList> result1 = new ArrayList<>();
         List<ArrayList> result2 = new ArrayList<>();
-        result1.add(crunchifyResult1);
-        result2.add(crunchifyResult2);
-        expected.put("Macedonia",result1);
-        expected.put("Bangladesh",result2);
+        result1.add(personList1);
+        result2.add(personList2);
+        expected.put("Macedonia", result1);
+        expected.put("Bangladesh", result2);
 
-        assertEquals(countryHast,expected);
+        assertEquals(countryHast, expected);
     }
 }
