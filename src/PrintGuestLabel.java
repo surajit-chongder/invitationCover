@@ -4,7 +4,7 @@ import java.util.List;
 
 public class PrintGuestLabel {
     public static void main(String[] args) throws IOException {
-        List guest = new ReadGuestFile(args[2]).readGuest();
+        List guest = new ReadRecords(args[2]).readGuest();
         CountryWiseList my = new CountryWiseList(guest);
         HashMap countryHast = my.mappingCountryGuest();
         GuestRepresentation countryGuest = new GuestRepresentation(countryHast);

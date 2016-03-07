@@ -11,4 +11,5 @@ Requirement:
          male - Mr
          female - Ms
 
-Command line: fileName countryName requireMethod
+Command line: shellScript country records
+

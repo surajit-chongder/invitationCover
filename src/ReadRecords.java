@@ -5,25 +5,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ReadGuestFile {
+public class ReadRecords {
     private final String fileName;
 
-    public ReadGuestFile(String file) {
+    public ReadRecords(String file) {
         this.fileName = file;
     }
 
     public List readGuest() throws IOException {
-        BufferedReader crunchifyBuffer;
+        BufferedReader readBuffer;
         List<ArrayList<String>> list = new ArrayList<>();
-        String crunchifyLine;
-        crunchifyBuffer = new BufferedReader(new FileReader(this.fileName));
-        while ((crunchifyLine = crunchifyBuffer.readLine()) != null) {
-            list.add(crunchifyArrayList(crunchifyLine));
-        }
+        String eachLine;
+        readBuffer = new BufferedReader(new FileReader(this.fileName));
+        while ((eachLine = readBuffer.readLine()) != null)
+            list.add(crunchifyArrayList(eachLine));
         return list;
     }
 
-    public ArrayList<String> crunchifyArrayList(String crunchifyString) {
+    private ArrayList<String> crunchifyArrayList(String crunchifyString) {
         ArrayList<String> crunchifyResult = new ArrayList<>();
         if (crunchifyString != null) {
             String[] splitData = crunchifyString.split(",");
@@ -31,5 +30,4 @@ public class ReadGuestFile {
         }
         return crunchifyResult;
     }
-
 }
