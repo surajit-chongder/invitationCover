@@ -14,8 +14,8 @@ public class PrintGuestLabel {
                 CountryWiseLabel CountryLabel = new CountryWiseLabel(args[0], args[1],args[2]);
                 printList = CountryLabel.allGuests();
                 break;
-            case 5:
-                CountryAgeWiseLabel countryAgeLabel = new CountryAgeWiseLabel(args[0], args[1], args[2], args[3], args[4]);
+            case 4:
+                CountryAgeWiseLabel countryAgeLabel = new CountryAgeWiseLabel(args[0], args[1], args[2], args[3]);
                 printList = countryAgeLabel.allGuests();
                 break;
             default:

@@ -9,14 +9,10 @@ public class CountryAgeWiseRepresentation {
         this.allGuest = allGuest;
     }
 
-    public List countryRepresentation(String key, String age, String drinkLegality) {
+    public List countryRepresentation(String key, String age) {
         int requireAge = Integer.parseInt(age);
         List countryGuest = (List) allGuest.get(key);
-        List drinkWiseCountryGuest = new ArrayList();
-        if (drinkLegality.equals("below"))
-            drinkWiseCountryGuest = new FilterAge(requireAge).filterBelowRequireAge(countryGuest);
-        if (drinkLegality.equals("above"))
-            drinkWiseCountryGuest = new FilterAge(requireAge).filterAboveRequireAge(countryGuest);
+        List drinkWiseCountryGuest = new FilterAge(requireAge).filterAboveRequireAge(countryGuest);
         List<PersonDetails> guest = new ArrayList<>();
         giveProperty(guest, drinkWiseCountryGuest);
         return guest;

@@ -21,12 +21,10 @@ public class ReadRecords {
         return list;
     }
 
-    private ArrayList<String> guestList(String crunchifyString) {
-        ArrayList<String> crunchifyResult = new ArrayList<>();
-        if (crunchifyString != null) {
-            String[] splitData = crunchifyString.split(",");
-            Collections.addAll(crunchifyResult, splitData);
-        }
-        return crunchifyResult;
+    private ArrayList<String> guestList(String data) {
+        ArrayList<String> eachData = new ArrayList<>();
+            String[] splitData = data.split(",");
+            Collections.addAll(eachData, splitData);
+        return eachData;
     }
 }
