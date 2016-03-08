@@ -10,9 +10,13 @@ public class PrintGuestLabel {
                 PersonWiseLabel label = new PersonWiseLabel(args[0], args[1]);
                 printList = label.allGuests();
                 break;
+            case 3:
+                CountryWiseLabel CountryLabel = new CountryWiseLabel(args[0], args[1],args[2]);
+                printList = CountryLabel.allGuests();
+                break;
             case 5:
-                CountryAgeWiseLabel countryLabel = new CountryAgeWiseLabel(args[0], args[1], args[2], args[3], args[4]);
-                printList = countryLabel.allGuests();
+                CountryAgeWiseLabel countryAgeLabel = new CountryAgeWiseLabel(args[0], args[1], args[2], args[3], args[4]);
+                printList = countryAgeLabel.allGuests();
                 break;
             default:
                 throw new RuntimeException("Method not available");

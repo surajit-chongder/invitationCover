@@ -10,11 +10,19 @@ public class PersonDetails {
         this.address = new PersonAddress(city, state, country);
     }
 
-    public String secondNameRepresentation() {
+    public String secondNameFirstCountryAgeWise() {
         return person.toString(",") + "," + address.toString() + "," + age;
     }
 
-    public String simpleRepresentation() {
+    public String firstNameFirstCountryAgeWise() {
         return person.toString() + "," + address.toString() + "," + age;
+    }
+
+    public String secondNameFirstCountryWise() {
+        return person.toString(",") + "," + address.toString();
+    }
+
+    public String firstNameFirstCountryWise() {
+        return person.toString() + "," + address.toString();
     }
 }

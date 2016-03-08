@@ -6,10 +6,10 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class DrinkerTest {
+public class FilterAgeTest {
     @Test
     public void test_filterIllegalDrinker_filter_guest_whom_age_less_than_20() throws Exception {
-        Drinker drinker = new Drinker(20);
+        FilterAge filterAge = new FilterAge(20);
 
         List<ArrayList<String>> list = new ArrayList<>();
         String recordString1 = "Julius,Barrows,Female,18,Veda haven,Vermont,Macedonia";
@@ -26,11 +26,11 @@ public class DrinkerTest {
 
         List<List> expectedResult = new ArrayList<>();
         expectedResult.add(personList1);
-        assertEquals(expectedResult,drinker.filterIllegalDrinker(list));
+        assertEquals(expectedResult, filterAge.filterBelowRequireAge(list));
     }
     @Test
     public void test_filterLegalDrinker_filter_guest_whom_age_less_than_20() throws Exception {
-        Drinker drinker = new Drinker(20);
+        FilterAge filterAge = new FilterAge(20);
 
         List<ArrayList<String>> list = new ArrayList<>();
         String recordString1 = "Julius,Barrows,Female,18,Veda haven,Vermont,Macedonia";
@@ -47,6 +47,6 @@ public class DrinkerTest {
 
         List<List> expectedResult = new ArrayList<>();
         expectedResult.add(personList2);
-        assertEquals(expectedResult,drinker.filterLegalDrinker(list));
+        assertEquals(expectedResult, filterAge.filterAboveRequireAge(list));
     }
 }

@@ -1,37 +1,37 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Drinker {
+public class FilterAge {
     private final int age;
 
-    public Drinker(int age) {
+    public FilterAge(int age) {
         this.age = age;
     }
 
-    public List filterLegalDrinker(List guest) {
+    public List filterAboveRequireAge(List guest) {
         List<List> legalDrinkerList = new ArrayList<>();
             for (Object aGuestList : guest) {
                 List each = (List) aGuestList;
                 int age = Integer.parseInt((String) each.get(3));
-                if (isLegalDrinker(age))
+                if (isLegal(age))
                     legalDrinkerList.add(each);
 
             }
         return legalDrinkerList;
     }
 
-    public List filterIllegalDrinker(List guest) {
-        List<List> unlegalDrinkerList = new ArrayList<>();
+    public List filterBelowRequireAge(List guest) {
+        List<List> illegalDrinkerList = new ArrayList<>();
         for (Object aGuestList : guest) {
             List each = (List) aGuestList;
             int age = Integer.parseInt((String) each.get(3));
-            if (!isLegalDrinker(age))
-                unlegalDrinkerList.add(each);
+            if (!isLegal(age))
+                illegalDrinkerList.add(each);
         }
-        return unlegalDrinkerList;
+        return illegalDrinkerList;
     }
 
-    private boolean isLegalDrinker(int age) {
+    private boolean isLegal(int age) {
         return age >= this.age;
     }
 }

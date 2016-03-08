@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class CountryWiseRepresentationTest {
+public class CountryAgeWiseRepresentationTest {
     @Test
     public void test_representation_give_string_firstNameFirst_representation_when_firstNameFirst_given() throws Exception {
         List<ArrayList<String>> list1 = new ArrayList<>();
@@ -26,7 +26,7 @@ public class CountryWiseRepresentationTest {
         HashMap<String,List> personsHash = new HashMap<>();
         personsHash.put("Bangladesh",list1);
 
-        CountryWiseRepresentation personAgeRepresent = new CountryWiseRepresentation(personsHash);
+        CountryAgeWiseRepresentation personAgeRepresent = new CountryAgeWiseRepresentation(personsHash);
         Assert.assertEquals(expected,personAgeRepresent.representation(person,"firstNameFirst"));
 
     }
@@ -49,7 +49,7 @@ public class CountryWiseRepresentationTest {
         HashMap<String,List> personsHash = new HashMap<>();
         personsHash.put("Bangladesh",list1);
 
-        CountryWiseRepresentation personAgeRepresent = new CountryWiseRepresentation(personsHash);
+        CountryAgeWiseRepresentation personAgeRepresent = new CountryAgeWiseRepresentation(personsHash);
         Assert.assertEquals(expected,personAgeRepresent.representation(person,"lastNameFirst"));
 
     }

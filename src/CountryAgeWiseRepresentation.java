@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CountryWiseRepresentation {
+public class CountryAgeWiseRepresentation {
     private HashMap allGuest;
 
-    public CountryWiseRepresentation(HashMap allGuest) {
+    public CountryAgeWiseRepresentation(HashMap allGuest) {
         this.allGuest = allGuest;
     }
 
@@ -14,9 +14,9 @@ public class CountryWiseRepresentation {
         List countryGuest = (List) allGuest.get(key);
         List drinkWiseCountryGuest = new ArrayList();
         if (drinkLegality.equals("below"))
-            drinkWiseCountryGuest = new Drinker(requireAge).filterIllegalDrinker(countryGuest);
+            drinkWiseCountryGuest = new FilterAge(requireAge).filterBelowRequireAge(countryGuest);
         if (drinkLegality.equals("above"))
-            drinkWiseCountryGuest = new Drinker(requireAge).filterLegalDrinker(countryGuest);
+            drinkWiseCountryGuest = new FilterAge(requireAge).filterAboveRequireAge(countryGuest);
         List<PersonDetails> guest = new ArrayList<>();
         giveProperty(guest, drinkWiseCountryGuest);
         return guest;
@@ -42,10 +42,10 @@ public class CountryWiseRepresentation {
         for (Object aGuest : guest) {
             PersonDetails each = (PersonDetails) aGuest;
             if (method.equals("firstNameFirst")) {
-                allGuestList.add(each.simpleRepresentation());
+                allGuestList.add(each.firstNameFirstCountryAgeWise());
             }
             if (method.equals("lastNameFirst")) {
-                allGuestList.add(each.secondNameRepresentation());
+                allGuestList.add(each.secondNameFirstCountryAgeWise());
             }
         }
         return allGuestList;

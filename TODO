@@ -17,11 +17,11 @@ command line usage:
     shellScript(firstFirst) records ->  Mr/Ms first last    (done)
     shellScript(lastFirst) records ->  Mr/Ms last,first     (done)
 
-    shellScript(firstFirst) -country records -> Mr/Ms first last,country
-    shellScript(lastFirst) -country records ->  Mr/Ms last,first,country
+    shellScript(firstFirst) country records -> Mr/Ms first last,country     (done)
+    shellScript(lastFirst) country records ->  Mr/Ms last,first,country     (done)
 
-    shellScript(firstFirst) -country -age -above records -> Mr/Ms first last,country,age    (done)
-    shellScript(lastFirst) -country -age -below records ->  Mr/Ms last,first,country,age    (done)
+    shellScript(firstFirst) country age above records -> Mr/Ms first last,country,age    (done)
+    shellScript(lastFirst) country age below records ->  Mr/Ms last,first,country,age    (done)
 
 works:
     read the records according to input.
