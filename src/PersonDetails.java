@@ -11,10 +11,10 @@ public class PersonDetails {
     }
 
     public String secondNameRepresentation() {
-        return person.toString(",") + "," + address.toString()+","+age;
+        return person.toString(",") + "," + address.toString() + "," + age;
     }
 
     public String simpleRepresentation() {
-        return person.toString() + "," + address.toString()+","+age;
+        return person.toString() + "," + address.toString() + "," + age;
     }
 }

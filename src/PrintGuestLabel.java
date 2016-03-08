@@ -1,15 +1,23 @@
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 
 public class PrintGuestLabel {
     public static void main(String[] args) throws IOException {
-        List guest = new ReadRecords(args[4]).readGuest();
-        CountryWiseList my = new CountryWiseList(guest);
-        HashMap countryHast = my.mappingCountryGuest();
-        GuestRepresentation countryGuest = new GuestRepresentation(countryHast);
-        List guestList = countryGuest.countryRepresentation(args[1],args[2],args[3]);
-        List printList = countryGuest.representation(guestList,args[0]);
+        List printList;
+
+        switch (args.length){
+            case 2:
+                PersonWiseLabel label = new PersonWiseLabel(args[0], args[1]);
+                printList = label.allGuests();
+                break;
+            case 5:
+                CountryAgeWiseLabel countryLabel = new CountryAgeWiseLabel(args[0], args[1], args[2], args[3], args[4]);
+                printList = countryLabel.allGuests();
+                break;
+            default:
+                throw new RuntimeException("Method not available");
+        }
+
         for (Object aPrintList : printList) {
             System.out.println(aPrintList);
         }

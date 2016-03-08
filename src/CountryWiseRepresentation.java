@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GuestRepresentation {
+public class CountryWiseRepresentation {
     private HashMap allGuest;
 
-    public GuestRepresentation(HashMap allGuest) {
+    public CountryWiseRepresentation(HashMap allGuest) {
         this.allGuest = allGuest;
     }
 
-    public List countryRepresentation(String key, String age,String drinkLegality) {
+    public List countryRepresentation(String key, String age, String drinkLegality) {
         int requireAge = Integer.parseInt(age);
         List countryGuest = (List) allGuest.get(key);
         List drinkWiseCountryGuest = new ArrayList();
@@ -52,4 +52,3 @@ public class GuestRepresentation {
     }
 
 }
-
