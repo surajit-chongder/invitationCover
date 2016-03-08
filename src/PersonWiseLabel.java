@@ -12,8 +12,8 @@ public class PersonWiseLabel {
     public List allGuests(){
         CountryWiseList my = new CountryWiseList(guests);
         HashMap countryHast = my.mappingCountryGuest();
-        PersonWiseRepresentation personWiseRepresentation = new PersonWiseRepresentation(countryHast);
-        List guestList = personWiseRepresentation.personRepresentation();
-        return personWiseRepresentation.representation(guestList,method);
+        PersonRepresentation personRepresentation = new PersonRepresentation(countryHast);
+        List guestList = personRepresentation.personRepresentation();
+        return personRepresentation.representation(guestList,method);
     }
 }

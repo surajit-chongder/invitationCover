@@ -1,23 +1,32 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
-public class CountryAgeWiseRepresentation {
+public class PersonRepresentation {
     private HashMap allGuest;
 
-    public CountryAgeWiseRepresentation(HashMap allGuest) {
+    public PersonRepresentation(HashMap allGuest) {
         this.allGuest = allGuest;
     }
 
-    public List countryRepresentation(String key, String age) {
-        int requireAge = Integer.parseInt(age);
-        List countryGuest = (List) allGuest.get(key);
-        List guests = new FilterAge(requireAge).filterAboveRequireAge(countryGuest);
-        List<Person> guest = new ArrayList<>();
-        giveProperty(guest, guests);
-        return guest;
-    }
+    public List personRepresentation(){
+        List<Person> allName = new ArrayList<>();
+        Set keys = allGuest.keySet();
+        for (Object index : keys) {
+            List each = (List) allGuest.get(index);
+            giveProperty(allName,each);
 
+//            for (Object anEach : each) {
+//                List elements = (List) anEach;
+//                String firstName = (String)  elements.get(0);
+//                String secondName = (String)  elements.get(1);
+//                Name name = new Name(firstName,secondName);
+//                allName.add(name);
+//            }
+        }
+        return allName;
+    }
     private void giveProperty(List<Person> initialList, List guestList) {
         for (Object aCountryGuest : guestList) {
             List each = (List) aCountryGuest;
@@ -36,13 +45,15 @@ public class CountryAgeWiseRepresentation {
         for (Object aGuest : guest) {
             Person each = (Person) aGuest;
             if (method.equals("firstNameFirst")) {
-                allGuestList.add(each.getFirstNameFirstCountryAgeWise());
+                allGuestList.add(each.firstNameFirst());
             }
             if (method.equals("lastNameFirst")) {
-                allGuestList.add(each.getSecondNameFirstCountryAgeWise());
+                allGuestList.add(each.getSecondNameFirst());
             }
         }
         return allGuestList;
     }
 
 }
+
+

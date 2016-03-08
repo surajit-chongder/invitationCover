@@ -13,7 +13,7 @@ public class FilterAge {
             for (Object aGuestList : guest) {
                 List each = (List) aGuestList;
                 int age = Integer.parseInt((String) each.get(3));
-                if (isLegal(age))
+                if (isLegalDrinker(age))
                     legalDrinkerList.add(each);
 
             }
@@ -25,13 +25,13 @@ public class FilterAge {
         for (Object aGuestList : guest) {
             List each = (List) aGuestList;
             int age = Integer.parseInt((String) each.get(3));
-            if (!isLegal(age))
+            if (!isLegalDrinker(age))
                 illegalDrinkerList.add(each);
         }
         return illegalDrinkerList;
     }
 
-    private boolean isLegal(int age) {
+    private boolean isLegalDrinker(int age) {
         return age >= this.age;
     }
 }
