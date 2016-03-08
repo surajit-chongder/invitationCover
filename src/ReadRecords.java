@@ -13,16 +13,15 @@ public class ReadRecords {
     }
 
     public List readGuest() throws IOException {
-        BufferedReader readBuffer;
         List<ArrayList<String>> list = new ArrayList<>();
         String eachLine;
-        readBuffer = new BufferedReader(new FileReader(this.fileName));
+        BufferedReader readBuffer = new BufferedReader(new FileReader(this.fileName));
         while ((eachLine = readBuffer.readLine()) != null)
-            list.add(crunchifyArrayList(eachLine));
+            list.add(guestList(eachLine));
         return list;
     }
 
-    private ArrayList<String> crunchifyArrayList(String crunchifyString) {
+    private ArrayList<String> guestList(String crunchifyString) {
         ArrayList<String> crunchifyResult = new ArrayList<>();
         if (crunchifyString != null) {
             String[] splitData = crunchifyString.split(",");
