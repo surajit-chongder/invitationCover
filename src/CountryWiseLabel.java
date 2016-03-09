@@ -12,9 +12,9 @@ public class CountryWiseLabel {
         this.country = country;
     }
     public List allGuests(){
-        CountryWiseList my = new CountryWiseList(guests);
+        MapGuestsByCountry my = new MapGuestsByCountry(guests);
         HashMap countryHast = my.mappingCountryGuest();
-        CountryRepresentation countryGuest = new CountryRepresentation(countryHast);
+        FilterCountryGuests countryGuest = new FilterCountryGuests(countryHast);
         List guestList = countryGuest.countryGuests(country);
         return countryGuest.representation(guestList,method);
     }

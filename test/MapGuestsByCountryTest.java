@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class CountryWiseListTest {
+public class MapGuestsByCountryTest {
     @Test
     public void test_mappingCountryGuest_give_guest_records_country_wise() throws Exception {
         List<ArrayList<String>> list = new ArrayList<>();
@@ -23,8 +23,8 @@ public class CountryWiseListTest {
         Collections.addAll(personList2, splitData2);
         list.add(personList2);
 
-        CountryWiseList countryWiseList = new CountryWiseList(list);
-        HashMap countryHast = countryWiseList.mappingCountryGuest();
+        MapGuestsByCountry mapGuestsByCountry = new MapGuestsByCountry(list);
+        HashMap countryHast = mapGuestsByCountry.mappingCountryGuest();
         HashMap expected = new HashMap<>();
         List<ArrayList> result1 = new ArrayList<>();
         List<ArrayList> result2 = new ArrayList<>();

@@ -9,11 +9,11 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class CountryAgeWiseRepresentationTest {
+public class FilterCountryGuestsByAgeTest {
     List<ArrayList<String>> list = new ArrayList<>();
     List<Person> person = new ArrayList<>();
     HashMap<String, List> personsHash = new HashMap<>();
-    CountryAgeWiseRepresentation personAgeRepresent;
+    FilterCountryGuestsByAge personAgeRepresent;
 
     @Before
     public void setUp() throws Exception {
@@ -31,7 +31,7 @@ public class CountryAgeWiseRepresentationTest {
         Person eachPerson = new Person(name, gender, age, address);
         person.add(eachPerson);
         personsHash.put("Bangladesh", list);
-        personAgeRepresent = new CountryAgeWiseRepresentation(personsHash);
+        personAgeRepresent = new FilterCountryGuestsByAge(personsHash);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class CountryAgeWiseRepresentationTest {
 
     @Test
     public void test_personRepresentation_give_list_of_persons() throws Exception {
-        List<Person> personList= personAgeRepresent.countryRepresentation("Bangladesh","30");
+        List<Person> personList= personAgeRepresent.filteringCountryAgeGuests("Bangladesh","30");
         String result = personList.get(0).firstNameFirst();
         String expected = person.get(0).firstNameFirst();
         assertEquals(result,expected);

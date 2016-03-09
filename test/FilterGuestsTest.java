@@ -8,11 +8,11 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class PersonRepresentationTest {
+public class FilterGuestsTest {
     List<ArrayList<String>> list = new ArrayList<>();
     List<Person> person = new ArrayList<>();
     HashMap<String, List> personsHash = new HashMap<>();
-    PersonRepresentation personRepresent;
+    FilterGuests personRepresent;
 
     @Before
     public void setUp() throws Exception {
@@ -30,7 +30,7 @@ public class PersonRepresentationTest {
         Person eachPerson = new Person(name, gender, age, address);
         person.add(eachPerson);
         personsHash.put("Bangladesh", list);
-        personRepresent = new PersonRepresentation(personsHash);
+        personRepresent = new FilterGuests(personsHash);
     }
 
     @Test

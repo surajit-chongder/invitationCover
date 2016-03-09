@@ -12,10 +12,10 @@ public class CountryAgeWiseLabel {
         this.age = age;
     }
     public List allGuests(){
-        CountryWiseList my = new CountryWiseList(guests);
+        MapGuestsByCountry my = new MapGuestsByCountry(guests);
         HashMap countryHast = my.mappingCountryGuest();
-        CountryAgeWiseRepresentation countryGuest = new CountryAgeWiseRepresentation(countryHast);
-        List guestList = countryGuest.countryRepresentation(country,age);
+        FilterCountryGuestsByAge countryGuest = new FilterCountryGuestsByAge(countryHast);
+        List guestList = countryGuest.filteringCountryAgeGuests(country,age);
         return countryGuest.representation(guestList,method);
     }
 }

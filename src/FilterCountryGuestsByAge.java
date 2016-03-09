@@ -2,16 +2,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CountryRepresentation {
-    private HashMap guests;
-    public CountryRepresentation(HashMap countryHast) {
-        this.guests = countryHast;
+public class FilterCountryGuestsByAge {
+    private HashMap allGuest;
+
+    public FilterCountryGuestsByAge(HashMap allGuest) {
+        this.allGuest = allGuest;
     }
 
-    public List countryGuests(String country) {
-        List countryGuest = (List) guests.get(country);
+    public List filteringCountryAgeGuests(String key, String age) {
+        int requireAge = Integer.parseInt(age);
+        List countryGuest = (List) allGuest.get(key);
+        List guests = new FilterAge(requireAge).filterAboveRequireAge(countryGuest);
         List<Person> guest = new ArrayList<>();
-        giveProperty(guest, countryGuest);
+        giveProperty(guest, guests);
         return guest;
     }
 
@@ -27,17 +30,19 @@ public class CountryRepresentation {
             initialList.add(eachPerson);
         }
     }
-    public List representation(List guestList, String method) {
+
+    public List representation(List guest, String method) {
         List<String> allGuestList = new ArrayList<>();
-        for (Object aGuest : guestList) {
+        for (Object aGuest : guest) {
             Person each = (Person) aGuest;
             if (method.equals("firstNameFirst")) {
-                allGuestList.add(each.getFirstNameFirstCountryWise());
+                allGuestList.add(each.getFirstNameFirstCountryAgeWise());
             }
             if (method.equals("lastNameFirst")) {
-                allGuestList.add(each.getSecondNameFirstCountryWise());
+                allGuestList.add(each.getSecondNameFirstCountryAgeWise());
             }
         }
         return allGuestList;
     }
+
 }

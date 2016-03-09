@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CountryWiseList {
+public class MapGuestsByCountry {
     final List guestList;
 
-    public CountryWiseList(List guestList){
+    public MapGuestsByCountry(List guestList){
         this.guestList = guestList;
     }
 

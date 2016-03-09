@@ -10,10 +10,10 @@ public class PersonWiseLabel {
         this.method = method;
     }
     public List allGuests(){
-        CountryWiseList my = new CountryWiseList(guests);
+        MapGuestsByCountry my = new MapGuestsByCountry(guests);
         HashMap countryHast = my.mappingCountryGuest();
-        PersonRepresentation personRepresentation = new PersonRepresentation(countryHast);
-        List guestList = personRepresentation.personRepresentation();
-        return personRepresentation.representation(guestList,method);
+        FilterGuests filterGuests = new FilterGuests(countryHast);
+        List guestList = filterGuests.personRepresentation();
+        return filterGuests.representation(guestList,method);
     }
 }
