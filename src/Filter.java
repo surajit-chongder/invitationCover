@@ -7,7 +7,8 @@ public class Filter {
     public Filter(List<Person> guests) {
         this.guests = guests;
     }
-    public List<Person> filteringByCountry(String country){
+
+    public List<Person> filteringByCountry(String country) {
         List<Person> guestList = new ArrayList<>();
         for (Person guest : guests) {
             if (guest.isSameCountry(country))

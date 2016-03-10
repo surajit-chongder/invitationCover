@@ -1,1 +1,1 @@
-javac -cp src:out/PrintGuestLabel -d out src/PrintGuestLabel.java && java -cp out/ PrintGuestLabel lastNameFirst $@
+javac -cp src:out/PrintLabel -d out src/PrintLabel.java && java -cp out/ PrintLabel --lastFirst $@

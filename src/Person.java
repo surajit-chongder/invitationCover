@@ -4,7 +4,7 @@ public class Person {
     private final Age age;
     private final Address address;
 
-    public Person(Name name,Gender gender, Age age, Address address) {
+    public Person(Name name, Gender gender, Age age, Address address) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -21,27 +21,27 @@ public class Person {
 
 
     public String getSecondNameFirstCountryAgeWise() {
-        return String.format("%s %s,%s,%s",gender,name.toString(","),address.toString(),age);
+        return String.format("%s %s,%s,%s", gender, name.toString(","), address.toString(), age);
     }
 
     public String getFirstNameFirstCountryAgeWise() {
-        return String.format("%s %s,%s,%s",gender,name.toString(),address.toString(),age);
+        return String.format("%s %s,%s,%s", gender, name.toString(), address.toString(), age);
     }
 
     public String getSecondNameFirst() {
-        return String.format("%s %s",gender,name.toString(","));
+        return String.format("%s %s", gender, name.toString(","));
     }
 
     public String firstNameFirst() {
-        return String.format("%s %s",gender,name.toString());
+        return String.format("%s %s", gender, name.toString());
     }
 
     public String getSecondNameFirstCountryWise() {
-        return String.format("%s %s,%s",gender,name.toString(","),address.toString());
+        return String.format("%s %s,%s", gender, name.toString(","), address.toString());
     }
 
     public String getFirstNameFirstCountryWise() {
-        return String.format("%s %s,%s",gender,name.toString(),address.toString());
+        return String.format("%s %s,%s", gender, name.toString(), address.toString());
     }
 }
 

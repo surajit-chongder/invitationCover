@@ -15,6 +15,6 @@ public class Address {
     }
 
     public boolean isSameCountry(String country) {
-        return java.util.Objects.equals(this.country,country);
+        return java.util.Objects.equals(this.country, country);
     }
 }

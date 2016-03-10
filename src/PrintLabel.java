@@ -18,7 +18,7 @@ public class PrintLabel {
         PersonGenerator persons = new PersonGenerator(guests);
         List<Person> allGuest = persons.generatePerson();
 
-        OptionHandler handler = new OptionHandler(args,allGuest);
+        OptionHandler handler = new OptionHandler(args, allGuest);
         List<String> printList = handler.guestList();
 
         for (Object aPrintList : printList) {

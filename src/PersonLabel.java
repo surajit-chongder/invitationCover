@@ -9,6 +9,7 @@ public class PersonLabel {
         this.method = method;
         this.guests = guests;
     }
+
     public List<String> representation() {
         List<String> allGuestList = new ArrayList<>();
         for (Object aGuest : guests) {
