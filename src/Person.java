@@ -4,13 +4,21 @@ public class Person {
     private final Age age;
     private final Address address;
 
-
     public Person(Name name,Gender gender, Age age, Address address) {
         this.name = name;
         this.gender = gender;
         this.age = age;
         this.address = address;
     }
+
+    public boolean isSameCountry(String country) {
+        return address.isSameCountry(country);
+    }
+
+    public boolean isOlder(int age) {
+        return this.age.isOlder(age);
+    }
+
 
     public String getSecondNameFirstCountryAgeWise() {
         return String.format("%s %s,%s,%s",gender,name.toString(","),address.toString(),age);
@@ -36,3 +44,4 @@ public class Person {
         return String.format("%s %s,%s",gender,name.toString(),address.toString());
     }
 }
+

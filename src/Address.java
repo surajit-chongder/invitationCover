@@ -13,4 +13,8 @@ public class Address {
     public String toString() {
         return country;
     }
+
+    public boolean isSameCountry(String country) {
+        return java.util.Objects.equals(this.country,country);
+    }
 }
