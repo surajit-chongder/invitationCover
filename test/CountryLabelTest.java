@@ -31,16 +31,16 @@ public class CountryLabelTest {
     @Test
     public void test_representation_firstFirst_give_list_of_representation() throws Exception {
         List<String> expected = new ArrayList<>();
-        expected.add("Ms Julius Barrows,Macedonia");
-        expected.add("Mr Ram Raj,Bangladesh");
+        expected.add("Ms Julius Barrows, Macedonia");
+        expected.add("Mr Ram Raj, Bangladesh");
         CountryLabel guest = new CountryLabel("--firstFirst",guests);
         Assert.assertEquals(expected,guest.representation());
     }
     @Test
     public void test_representation_lastFirst_give_list_of_representation() throws Exception {
         List<String> expected = new ArrayList<>();
-        expected.add("Ms Barrows,Julius,Macedonia");
-        expected.add("Mr Raj,Ram,Bangladesh");
+        expected.add("Ms Barrows, Julius, Macedonia");
+        expected.add("Mr Raj, Ram, Bangladesh");
         CountryLabel guest = new CountryLabel("--lastFirst",guests);
         Assert.assertEquals(expected,guest.representation());
     }

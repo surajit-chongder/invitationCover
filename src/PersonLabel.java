@@ -15,7 +15,7 @@ public class PersonLabel {
         for (Object aGuest : guests) {
             Person each = (Person) aGuest;
             if (method.equals("--firstFirst")) {
-                allGuestList.add(each.firstNameFirst());
+                allGuestList.add(each.getFirstNameFirst());
             }
             if (method.equals("--lastFirst")) {
                 allGuestList.add(each.getSecondNameFirst());

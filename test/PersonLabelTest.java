@@ -39,8 +39,8 @@ public class PersonLabelTest {
     @Test
     public void test_representation_lastFirst_give_list_of_representation() throws Exception {
         List<String> expected = new ArrayList<>();
-        expected.add("Ms Barrows,Julius");
-        expected.add("Mr Raj,Ram");
+        expected.add("Ms Barrows, Julius");
+        expected.add("Mr Raj, Ram");
         PersonLabel guest = new PersonLabel("--lastFirst",guests);
         Assert.assertEquals(expected,guest.representation());
     }

@@ -3,7 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class PersonGeneratorTest {
@@ -28,7 +27,7 @@ public class PersonGeneratorTest {
     @Test
     public void test_PersonGeneratorTest_should_generate_the_person() throws Exception {
         PersonGenerator generator = new PersonGenerator(list);
-        Assert.assertEquals(guests.get(0).firstNameFirst(),generator.generatePerson().get(0).firstNameFirst());
+        Assert.assertEquals(guests.get(0).getFirstNameFirst(),generator.generatePerson().get(0).getFirstNameFirst());
 
     }
 }

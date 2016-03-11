@@ -17,7 +17,7 @@ public class CountryAgeLabel {
             if (method.equals("--firstFirst")) {
                 allGuestList.add(each.getFirstNameFirstCountryAgeWise());
             }
-            if (method.equals("--lastFirst")) {
+             if (method.equals("--lastFirst")) {
                 allGuestList.add(each.getSecondNameFirstCountryAgeWise());
             }
         }

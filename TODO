@@ -12,6 +12,30 @@ Requirement:
          female - Ms
 
 
+    3.Final requirement:
+
+         firstFirst:
+                        +----------------------+
+                        | Mr John Smith        |
+                        |----------------------|
+                        | New Delhi, Karnataka |
+                        | India                |
+                        +----------------------+
+
+
+         lastFirst:
+
+                        +----------------------+
+                        | Mr Smith, John       |
+                        |----------------------|
+                        | New Delhi, Karnataka |
+                        | India                |
+                        +----------------------+
+
+
+         particular about the size of the borders with a margin of one space between the text and the borders.
+
+
 command line usage:
 
     shellScript(firstFirst) records ->  Mr/Ms first last    (done)
@@ -23,8 +47,11 @@ command line usage:
     shellScript(firstFirst) country age above records -> Mr/Ms first last,country,age    (done)
     shellScript(lastFirst) country age below records ->  Mr/Ms last,first,country,age    (done)
 
+
+    shellScript(firstFirst)
+
 works:
     read the records according to input.
     make their representation according to requirement.
     separate the total data according to country.
-    separate the data according to country and the above and below  age which age is given accordingly.
+    separate the data according to country and the above age which age is given accordingly.

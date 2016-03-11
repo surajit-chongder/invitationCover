@@ -7,7 +7,7 @@ public class Name {
     }
 
     public String toString(String delimiter) {
-        return secondName + delimiter + firstName;
+        return secondName + delimiter +" "+ firstName;
     }
 
     @Override

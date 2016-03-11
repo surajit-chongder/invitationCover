@@ -23,7 +23,7 @@ public class OptionHandlerTest {
 
     @Test
     public void test_guestList_gives_only_firstFirst_guest_name() throws Exception {
-        label.add(person1.firstNameFirst());
+        label.add(person1.getFirstNameFirst());
         String[] args = {"--firstFirst","--file","records"};
         OptionHandler handler = new OptionHandler(args, guests);
         Assert.assertEquals(label,handler.guestList());

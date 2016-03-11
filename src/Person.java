@@ -21,27 +21,50 @@ public class Person {
 
 
     public String getSecondNameFirstCountryAgeWise() {
-        return String.format("%s %s,%s,%s", gender, name.toString(","), address.toString(), age);
+        return String.format("%s %s, %s, %s", gender, name.toString(","), address.getCountry(), age);
     }
 
     public String getFirstNameFirstCountryAgeWise() {
-        return String.format("%s %s,%s,%s", gender, name.toString(), address.toString(), age);
+        return String.format("%s %s, %s, %s", gender, name.toString(), address.getCountry(), age);
     }
 
     public String getSecondNameFirst() {
         return String.format("%s %s", gender, name.toString(","));
     }
 
-    public String firstNameFirst() {
+    public String getFirstNameFirst() {
         return String.format("%s %s", gender, name.toString());
     }
 
     public String getSecondNameFirstCountryWise() {
-        return String.format("%s %s,%s", gender, name.toString(","), address.toString());
+        return String.format("%s %s, %s", gender, name.toString(","), address.getCountry());
     }
 
     public String getFirstNameFirstCountryWise() {
-        return String.format("%s %s,%s", gender, name.toString(), address.toString());
+        return String.format("%s %s, %s", gender, name.toString(), address.getCountry());
     }
+
+    public boolean isFirstNameFirstGreaterThanAddress() {
+        return getFirstNameFirst().length() > getLengthOfAddress();
+    }
+
+    public boolean isLastNameFirstGreaterThanAddress() {
+        return getSecondNameFirst().length() > getLengthOfAddress();
+    }
+
+    public int getLengthOfAddress() {
+        if (getCountry().length() > address.addressRepresentation().length())
+            return getCountry().length();
+        return address.addressRepresentation().length();
+    }
+
+    public String getAddress() {
+        return address.addressRepresentation();
+    }
+
+    public String getCountry() {
+        return address.getCountry();
+    }
+
 }
 

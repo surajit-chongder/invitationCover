@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,5 +23,14 @@ public class PrintLabel {
         for (Object aPrintList : printList) {
             System.out.println(aPrintList);
         }
+
+//        for (Person guest : allGuest) {
+//            CoverDecorator coverDecorator = new CoverDecorator(guest, args[0]);
+//            List eachDesign = coverDecorator.decoration();
+//            for (Object each : eachDesign){
+//                System.out.println(each);
+//            }
+//            System.out.println();
+//        }
     }
 }
