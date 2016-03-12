@@ -10,25 +10,20 @@ public class OptionHandler {
         this.guests = allGuest;
     }
 
-    public List<String> guestList() {
-        List<String> printList;
+    public List<Person> guestList() {
+        List<Person> printList;
 
         switch (args.length) {
             case 3:
-                PersonLabel label = new PersonLabel(args[0], guests);
-                printList = label.representation();
+                printList = guests;
                 break;
             case 5:
-                List<Person> guestsFromParticularCountry = new Filter(guests).filteringByCountry(getNext(args, "--country"));
-                CountryLabel countryLabel = new CountryLabel(args[0], guestsFromParticularCountry);
-                printList = countryLabel.representation();
+                printList =  new Filter(guests).filteringByCountry(getNext(args, "--country"));
                 break;
             case 7:
                 List<Person> guestsCountry = new Filter(guests).filteringByCountry(getNext(args, "--country"));
-                int age = Integer.parseInt(getNext(args, "--age"));
-                List<Person> guestsAboveAgeCountry = new Filter(guestsCountry).filteringByAboveAge(age);
-                CountryAgeLabel countryAgeLabel = new CountryAgeLabel(args[0], guestsAboveAgeCountry);
-                printList = countryAgeLabel.representation();
+                int age = Integer.parseInt(getNext(args, "--ageAbove"));
+                printList = new Filter(guestsCountry).filteringByAboveAge(age);
                 break;
             default:
                 throw new RuntimeException("Method not available");

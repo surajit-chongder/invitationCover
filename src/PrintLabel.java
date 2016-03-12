@@ -18,19 +18,15 @@ public class PrintLabel {
         List<Person> allGuest = persons.generatePerson();
 
         OptionHandler handler = new OptionHandler(args, allGuest);
-        List<String> printList = handler.guestList();
+        List<Person> printList = handler.guestList();
 
-        for (Object aPrintList : printList) {
-            System.out.println(aPrintList);
+
+        for (Person guest : printList) {
+            CoverDecorator coverDecorator = new CoverDecorator(guest, args[0]);
+            List eachDesign = coverDecorator.decoration();
+            for (Object each : eachDesign) {
+                System.out.println(each);
+            }
         }
-
-//        for (Person guest : allGuest) {
-//            CoverDecorator coverDecorator = new CoverDecorator(guest, args[0]);
-//            List eachDesign = coverDecorator.decoration();
-//            for (Object each : eachDesign){
-//                System.out.println(each);
-//            }
-//            System.out.println();
-//        }
     }
 }

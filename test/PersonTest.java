@@ -33,24 +33,4 @@ public class PersonTest {
         Assert.assertEquals("Ms Barrows, Julius",person.getSecondNameFirst());
     }
 
-    @Test
-    public void test_getFirstNameFirstCountryWise_give_firstName_representation_country() throws Exception {
-        Assert.assertEquals("Ms Julius Barrows, Macedonia",person.getFirstNameFirstCountryWise());
-    }
-
-    @Test
-    public void test_getSecondNameFirstCountryWise_give_secondName_representation_country() throws Exception {
-        Assert.assertEquals("Ms Barrows, Julius, Macedonia",person.getSecondNameFirstCountryWise());
-    }
-
-    @Test
-    public void test_getFirstNameFirstCountryWise_give_firstName_representation_country_age() throws Exception {
-        Assert.assertEquals("Ms Julius Barrows, Macedonia, 18",person.getFirstNameFirstCountryAgeWise());
-    }
-
-    @Test
-    public void test_getSecondNameFirstCountryWise_give_secondName_representation_country_age() throws Exception {
-        Assert.assertEquals("Ms Barrows, Julius, Macedonia, 18",person.getSecondNameFirstCountryAgeWise());
-    }
-
 }
