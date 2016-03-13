@@ -1,3 +1,11 @@
+package guestMain;
+
+import design.CoverDecorator;
+import entities.Person;
+import fileIO.Reader;
+import guestMain.OptionHandler;
+import guestManipulation.PersonGenerator;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;

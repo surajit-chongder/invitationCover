@@ -1,3 +1,5 @@
+package entities;
+
 public enum Gender {
     Male("Mr"),
     Female("Ms");

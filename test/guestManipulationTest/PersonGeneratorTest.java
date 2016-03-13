@@ -1,3 +1,7 @@
+package guestManipulationTest;
+
+import entities.*;
+import guestManipulation.PersonGenerator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

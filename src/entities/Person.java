@@ -1,3 +1,9 @@
+package entities;
+
+import entities.Address;
+import entities.Age;
+import entities.Name;
+
 public class Person {
     private final Gender gender;
     private final Name name;

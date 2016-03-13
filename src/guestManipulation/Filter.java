@@ -1,3 +1,7 @@
+package guestManipulation;
+
+import entities.Person;
+
 import java.util.ArrayList;
 import java.util.List;
 

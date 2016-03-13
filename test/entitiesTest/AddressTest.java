@@ -1,3 +1,6 @@
+package entitiesTest;
+
+import entities.Address;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

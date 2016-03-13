@@ -1,3 +1,5 @@
+package entities;
+
 public class Name {
     private final String firstName, secondName;
 
