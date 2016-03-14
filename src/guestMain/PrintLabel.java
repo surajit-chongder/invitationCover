@@ -3,7 +3,6 @@ package guestMain;
 import design.CoverDecorator;
 import entities.Person;
 import fileIO.Reader;
-import guestMain.OptionHandler;
 import guestManipulation.PersonGenerator;
 
 import java.io.IOException;
@@ -30,8 +29,8 @@ public class PrintLabel {
 
 
         for (Person guest : printList) {
-            CoverDecorator coverDecorator = new CoverDecorator(guest, args[0]);
-            List eachDesign = coverDecorator.decoration();
+            CoverDecorator decorator = new CoverDecorator(guest, args[0]);
+            List eachDesign = decorator.decoration();
             for (Object each : eachDesign) {
                 System.out.println(each);
             }

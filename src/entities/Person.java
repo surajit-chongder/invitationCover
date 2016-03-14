@@ -1,9 +1,5 @@
 package entities;
 
-import entities.Address;
-import entities.Age;
-import entities.Name;
-
 public class Person {
     private final Gender gender;
     private final Name name;
@@ -42,18 +38,17 @@ public class Person {
     }
 
     public int getLengthOfAddress() {
-        if (getCountry().length() > address.addressRepresentation().length())
-            return getCountry().length();
+        if (representCountry().length() > address.addressRepresentation().length())
+            return representCountry().length();
         return address.addressRepresentation().length();
     }
 
-    public String getAddress() {
+    public String representCityAndState() {
         return address.addressRepresentation();
     }
 
-    public String getCountry() {
+    public String representCountry() {
         return address.getCountry();
     }
 
 }
-

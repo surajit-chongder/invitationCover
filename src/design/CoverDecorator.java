@@ -27,20 +27,20 @@ public class CoverDecorator {
 
     private List<String> coverDecoration(String personName) {
         int labelSize = getLabelSizeAccordingToFirstName();
-        if (personName.equals(person.getSecondNameFirst())) {
+        if (personName.equals(person.getSecondNameFirst()))
             labelSize = getLabelSizeAccordingToLastName();
-        }
+
         List<String> design = new ArrayList<>();
-        design.add("+-" + symbol("-", labelSize) + "-+");
-        design.add("| " + personName + symbol(" ", labelSize - personName.length()) + " |");
-        design.add("|-" + symbol("-", labelSize) + "-|");
-        design.add("| " + person.getAddress() + symbol(" ", labelSize - person.getAddress().length()) + " |");
-        design.add("| " + person.getCountry() + symbol(" ", labelSize - person.getCountry().length()) + " |");
-        design.add("+-" + symbol("-", labelSize) + "-+");
+        design.add("+-" + generateSymbol("-", labelSize) + "-+");
+        design.add("| " + personName + generateSymbol(" ", labelSize - personName.length()) + " |");
+        design.add("|-" + generateSymbol("-", labelSize) + "-|");
+        design.add("| " + person.representCityAndState() + generateSymbol(" ", labelSize - person.representCityAndState().length()) + " |");
+        design.add("| " + person.representCountry() + generateSymbol(" ", labelSize - person.representCountry().length()) + " |");
+        design.add("+-" + generateSymbol("-", labelSize) + "-+");
         return design;
     }
 
-    private String symbol(String type, int width) {
+    private String generateSymbol(String type, int width) {
         String result = "";
         for (int index = 0; index < width; index++)
             result += type;
