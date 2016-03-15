@@ -19,7 +19,10 @@ public class CoverDecoratorTest {
         Name name = new Name("Julius", "Barrows");
         Gender female = Gender.valueOf("Female");
         Age age = new Age(18);
-        Address address = new Address("Veda haven", "Vermont", "Macedonia");
+        City city = new City("Veda haven");
+        State state = new State("Vermont");
+        Country country = new Country("Macedonia");
+        Address address = new Address(city, state, country);
         person = new Person(name, female, age, address);
     }
 

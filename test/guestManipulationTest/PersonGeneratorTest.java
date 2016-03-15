@@ -22,7 +22,10 @@ public class PersonGeneratorTest {
         Name name1 = new Name("Melody", "Dooley");
         Gender female = Gender.valueOf("Female");
         Age age1 = new Age(31);
-        Address address1 = new Address("West Shanna", "Vermont", "Bangladesh");
+        City city = new City("West Shanna");
+        State state = new State("Vermont");
+        Country country = new Country("Bangladesh");
+        Address address1 = new Address(city, state, country);
         person1 = new Person(name1, female, age1, address1);
 
         guests.add(person1);

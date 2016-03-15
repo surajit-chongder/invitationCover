@@ -1,6 +1,9 @@
 package entitiesTest;
 
 import entities.Address;
+import entities.City;
+import entities.Country;
+import entities.State;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +13,10 @@ public class AddressTest {
 
     @Before
     public void setUp() throws Exception {
-        address = new Address("Veda haven", "Vermont", "Macedonia");
+        City city = new City("Veda haven");
+        State state = new State("Vermont");
+        Country country = new Country("Macedonia");
+        address = new Address(city,state ,country );
     }
 
     @Test

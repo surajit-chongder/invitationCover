@@ -20,14 +20,20 @@ public class OptionHandlerTest {
         Name name1 = new Name("Melody", "Dooley");
         Gender female = Gender.valueOf("Female");
         Age age1 = new Age(31);
-        Address address1 = new Address("West Shanna", "Vermont", "Bangladesh");
+        City city1 = new City("West Shanna");
+        State state1 = new State("Vermont");
+        Country country1 = new Country("Bangladesh");
+        Address address1 = new Address(city1, state1, country1);
         person1 = new Person(name1, female, age1, address1);
         guests.add(person1);
 
         Name name2 = new Name("Ram", "Raj");
         Gender male = Gender.valueOf("Male");
         Age age2 = new Age(20);
-        Address address2 = new Address("West", "San", "Qatar");
+        City city2 = new City("West");
+        State state2 = new State("San");
+        Country country2 = new Country("Qatar");
+        Address address2 = new Address(city2, state2, country2);
         person2 = new Person(name2, male, age2, address2);
         guests.add(person2);
 

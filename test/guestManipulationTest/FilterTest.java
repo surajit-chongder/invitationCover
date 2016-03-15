@@ -19,13 +19,19 @@ public class FilterTest {
         Name name1 = new Name("Julius", "Barrows");
         Gender female = Gender.valueOf("Female");
         Age age1 = new Age(18);
-        Address address1 = new Address("Veda haven", "Vermont", "Macedonia");
+        City city1 = new City("Veda haven");
+        State state1 = new State("Vermont");
+        Country country1 = new Country("Macedonia");
+        Address address1 = new Address(city1, state1, country1);
         person1 = new Person(name1, female, age1, address1);
 
         Name name2 = new Name("Ram", "Raj");
         Gender male = Gender.valueOf("Male");
         Age age2 = new Age(23);
-        Address address2 = new Address("Veda haven", "Vermont", "Bangladesh");
+        City city2 = new City("West Shanna");
+        State state2 = new State("Vermont");
+        Country country2 = new Country("Bangladesh");
+        Address address2 = new Address(city2, state2, country2);
         person2 = new Person(name2, male, age2, address2);
 
         guests.add(person1);

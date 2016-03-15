@@ -22,11 +22,11 @@ public class Person {
     }
 
     public String getSecondNameFirst() {
-        return String.format("%s %s", gender, name.toString(","));
+        return String.format("%s %s", gender, name.getLastNameFirst(","));
     }
 
     public String getFirstNameFirst() {
-        return String.format("%s %s", gender, name.toString());
+        return String.format("%s %s", gender, name.getFirstNameFirst());
     }
 
     public boolean isFirstNameFirstGreaterThanAddress() {
@@ -48,7 +48,7 @@ public class Person {
     }
 
     public String representCountry() {
-        return address.getCountry();
+        return address.getCountryName();
     }
 
 }

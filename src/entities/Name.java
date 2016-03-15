@@ -8,12 +8,11 @@ public class Name {
         this.secondName = surName;
     }
 
-    public String toString(String delimiter) {
-        return secondName + delimiter +" "+ firstName;
+    public String getLastNameFirst(String delimiter) {
+        return String.format("%s%s %s",secondName,delimiter,firstName);
     }
 
-    @Override
-    public String toString() {
-        return firstName + " " + secondName;
+    public String getFirstNameFirst() {
+        return String.format("%s %s",firstName,secondName);
     }
 }

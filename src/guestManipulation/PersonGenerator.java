@@ -20,7 +20,10 @@ public class PersonGenerator {
             Gender gender = Gender.valueOf(each[2]);
             int personAge = Integer.parseInt(each[3]);
             Age age = new Age(personAge);
-            Address address = new Address(each[4], each[5], each[6]);
+            City city = new City(each[4]);
+            State state = new State(each[5]);
+            Country country = new Country(each[6]);
+            Address address = new Address(city, state, country);
             Person eachPerson = new Person(name, gender, age, address);
             guests.add(eachPerson);
         }
