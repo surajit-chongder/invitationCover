@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Objects;
-
 public class Address {
     private final City city;
     private final State state;
@@ -14,14 +12,14 @@ public class Address {
     }
 
     public String getCountryName() {
-        return "" + country;
+        return String.valueOf(country);
     }
 
     public boolean isSameCountry(String country) {
         return this.country.isSameCountry(country);
     }
 
-    public String addressRepresentation() {
+    public String stateAndCityRepresentation() {
         return String.format("%s, %s", city, state);
     }
 }

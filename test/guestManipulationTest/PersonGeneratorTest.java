@@ -34,7 +34,9 @@ public class PersonGeneratorTest {
     @Test
     public void test_PersonGeneratorTest_should_generate_the_person() throws Exception {
         PersonGenerator generator = new PersonGenerator(list);
-        Assert.assertEquals(guests.get(0).getFirstNameFirst(),generator.generatePerson().get(0).getFirstNameFirst());
+        String expected = guests.get(0).getNameFormat(new FirstFirstFormat());
+        String result = generator.generatePerson().get(0).getNameFormat(new FirstFirstFormat());
+        Assert.assertEquals(expected,result);
 
     }
 }

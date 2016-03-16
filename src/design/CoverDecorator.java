@@ -1,5 +1,7 @@
 package design;
 
+import entities.FirstFirstFormat;
+import entities.LastFirstFormat;
 import entities.Person;
 
 import java.util.ArrayList;
@@ -17,9 +19,9 @@ public class CoverDecorator {
     public List<String> decoration() {
         switch (method) {
             case "--firstFirst":
-                return coverDecoration(person.getFirstNameFirst());
+                return coverDecoration(person.getNameFormat(new FirstFirstFormat()));
             case "--lastFirst":
-                return coverDecoration(person.getSecondNameFirst());
+                return coverDecoration(person.getNameFormat(new LastFirstFormat()));
             default:
                 throw new RuntimeException("Method not found");
         }
@@ -27,7 +29,7 @@ public class CoverDecorator {
 
     private List<String> coverDecoration(String personName) {
         int labelSize = getLabelSizeAccordingToFirstName();
-        if (personName.equals(person.getSecondNameFirst()))
+        if (personName.equals(person.getNameFormat(new LastFirstFormat())))
             labelSize = getLabelSizeAccordingToLastName();
 
         List<String> design = new ArrayList<>();
@@ -55,13 +57,13 @@ public class CoverDecorator {
 
     private int getLabelSizeAccordingToLastName() {
         if (isNameGreaterThanAddress() && method.equals("--lastFirst"))
-            return person.getSecondNameFirst().length();
+            return person.getNameFormat(new LastFirstFormat()).length();
         return person.getLengthOfAddress();
     }
 
     private int getLabelSizeAccordingToFirstName() {
         if (isNameGreaterThanAddress() && method.equals("--firstFirst"))
-            return person.getFirstNameFirst().length();
+            return person.getNameFormat(new FirstFirstFormat()).length();
         return person.getLengthOfAddress();
     }
 

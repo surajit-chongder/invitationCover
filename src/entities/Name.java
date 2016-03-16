@@ -15,4 +15,8 @@ public class Name {
     public String getFirstNameFirst() {
         return String.format("%s %s",firstName,secondName);
     }
+
+    public String getFormat(Formator format, Gender gender) {
+        return format.createFormat(gender,firstName,secondName);
+    }
 }

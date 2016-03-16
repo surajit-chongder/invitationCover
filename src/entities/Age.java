@@ -7,11 +7,6 @@ public class Age {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(age);
-    }
-
     public boolean isOlder(int age) {
         return this.age >= age;
     }

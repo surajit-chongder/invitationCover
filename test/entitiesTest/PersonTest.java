@@ -31,12 +31,12 @@ public class PersonTest {
     }
     @Test
     public void test_firstNameFirst_give_first_name_representation_only() throws Exception {
-        Assert.assertEquals("Ms Julius Barrows",person.getFirstNameFirst());
+        Assert.assertEquals("Ms Julius Barrows",person.getNameFormat(new FirstFirstFormat()));
     }
 
     @Test
     public void test_secondNameFirst_give_second_name_representation_only() throws Exception {
-        Assert.assertEquals("Ms Barrows, Julius",person.getSecondNameFirst());
+        Assert.assertEquals("Ms Barrows, Julius",person.getNameFormat(new LastFirstFormat()));
     }
 
 }

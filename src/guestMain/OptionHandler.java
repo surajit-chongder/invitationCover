@@ -3,6 +3,7 @@ package guestMain;
 import entities.Person;
 import guestManipulation.Filter;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,7 +18,6 @@ public class OptionHandler {
 
     public List<Person> guestList() {
         List<Person> printList;
-
         switch (args.length) {
             case 3:
                 printList = guests;

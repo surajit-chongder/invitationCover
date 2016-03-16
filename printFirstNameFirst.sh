@@ -1,1 +1,1 @@
-javac -cp out $(find src -name *.java) && java -cp out/ guestMain/PrintLabel --firstFirst $@
+javac -cp out $(find src -name *.java) && java -cp out/ guestMain/PrintLabel --firstFirst "$@"

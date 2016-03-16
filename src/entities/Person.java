@@ -13,6 +13,10 @@ public class Person {
         this.address = address;
     }
 
+    public String getNameFormat(Formator nameFormat){
+        return name.getFormat(nameFormat,gender);
+    }
+
     public boolean isSameCountry(String country) {
         return address.isSameCountry(country);
     }
@@ -21,30 +25,22 @@ public class Person {
         return this.age.isOlder(age);
     }
 
-    public String getSecondNameFirst() {
-        return String.format("%s %s", gender, name.getLastNameFirst(","));
-    }
-
-    public String getFirstNameFirst() {
-        return String.format("%s %s", gender, name.getFirstNameFirst());
-    }
-
     public boolean isFirstNameFirstGreaterThanAddress() {
-        return getFirstNameFirst().length() > getLengthOfAddress();
+        return getNameFormat(new FirstFirstFormat()).length() > getLengthOfAddress();
     }
 
     public boolean isLastNameFirstGreaterThanAddress() {
-        return getSecondNameFirst().length() > getLengthOfAddress();
+        return getNameFormat(new LastFirstFormat()).length() > getLengthOfAddress();
     }
 
     public int getLengthOfAddress() {
-        if (representCountry().length() > address.addressRepresentation().length())
+        if (representCountry().length() > address.stateAndCityRepresentation().length())
             return representCountry().length();
-        return address.addressRepresentation().length();
+        return address.stateAndCityRepresentation().length();
     }
 
     public String representCityAndState() {
-        return address.addressRepresentation();
+        return address.stateAndCityRepresentation();
     }
 
     public String representCountry() {
